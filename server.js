@@ -12,6 +12,8 @@ dotenv.config({path:'./.env'});
 
 const app = Express();
 
+const port=process.env.PORT || 5000;
+
 app.use(Express.json());
 
 app.use(Cors());
@@ -22,8 +24,8 @@ app.use(rutasUsuario);
 
 
 const main = () => {
-    return app.listen(process.env.PORT, () => {
-        console.log('escuchando puerto 5000');
+    return app.listen(port, () => {
+        console.log(`esuchando puerto ${port}`);
     });
 };
 
